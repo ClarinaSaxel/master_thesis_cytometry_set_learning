@@ -1,0 +1,27 @@
+# Administrative/private documents
+admin/
+
+# LaTeX build files in case they go wild
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# LaTeX build output
+thesis/build/
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
+
+# Data
+data/*
+!data/README.md
+
+# macOS
+.DS_Store

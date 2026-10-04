@@ -1,39 +1,86 @@
 \documentclass[a4paper,11pt]{report}
 
+% =======================================================================================
+%	Encoding and typography
+% =======================================================================================
+
+\usepackage[T1]{fontenc}
+
+% =======================================================================================
+%	Mathematics
+% =======================================================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{dsfont}
+
+% =======================================================================================
+%	Figures
+% =======================================================================================
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+% =======================================================================================
+%	Algorithms
+% =======================================================================================
+
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{dsfont}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[affil-it]{authblk}
-\usepackage{cite}
-\usepackage{mathtools}
-
-\usepackage{titlesec}
-
-\titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\Huge}
 
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 
+% =======================================================================================
+%	Bibliography and references
+% =======================================================================================
+
+\usepackage{cite}
+\usepackage{hyperref}
+
+% =======================================================================================
+%	Glossary and acronyms
+% =======================================================================================
+
+\usepackage[acronym]{glossaries}
+\input{config/glossary}
+
+% =======================================================================================
+%	Chapter formatting
+% =======================================================================================
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}
+  {}
+  {0pt}
+  {\Huge}
+
+% =======================================================================================
+%	Document
+% =======================================================================================
+
 \begin{document}
 
-\input{chapters/titlepage.tex}
+\input{chapters/titlepage}
 
-\input{chapters/abstract.tex}
+\input{chapters/abstract}
 
 \tableofcontents
 
 \chapter{Introduction}
-\input{chapters/introduction.tex}
+\input{chapters/introduction}
 Hello, I just read~\cite{NIPS2017_6931} and~\cite{pmlr-v97-lee19d}
 
+\chapter{Background}
+\input{chapters/background}
+
+\printnoidxglossaries
+
 \chapter{Appendix}
-\input{chapters/appendix.tex}
+\input{chapters/appendix}
 
 \bibliographystyle{plain}
 \bibliography{references}
